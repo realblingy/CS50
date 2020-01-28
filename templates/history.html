@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-hover"table-striped table-bordered " style="width:100%"">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Transacted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stocks %}
+    <tr>
+      <td>{{ stock['stocksymbol'] }}</td>
+      <td>{{ stock['quantity'] }}</td>
+      <td>{{ stock['stockprice'] }}</td>
+      <td>{{ stock['date'] }} {{ stock['time'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+{% endblock %}
+</table>
+<script>
+
+</script>

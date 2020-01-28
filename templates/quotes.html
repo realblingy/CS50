@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-hover"table-striped table-bordered " style="width:100%"">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in quotes %}
+    <tr>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['price'] }}</td>
+      <td>{{ i['symbol'] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+{% endblock %}
+</table>
+<script>
+
+</script>

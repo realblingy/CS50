@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-hover"table-striped table-bordered " style="width:100%"">
+  <thead>
+    <tr>
+      <h2>
+        Stocks
+      </h2>
+    </tr>
+    <tr>
+      <th scope="col">No. of Shares</th>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Share Price</th>
+      <th scope = "col">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for stock in stocks %}
+    <tr>
+    <td>{{ stock['SUM(quantity)'] }}</td>
+    <td>{{ stock['stocksymbol'] }}</td>
+    <td>{{ "$%.2f"|format(stock['stockprice']) }}</td>
+    <td>{{ "$%.2f"|format(stock['SUM(price)']) }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+  <tr><h6>Cash: {{ "$%.2f"|format(cash) }}</h6></tr>
+  <tr><h6>Total Worth: {{ "$%.2f"|format(total) }}</h6></tr>
+{% endblock %}
+</table>
+<script>
+
+</script>
